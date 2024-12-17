@@ -93,11 +93,16 @@ jobs:
           name: package
           path: dist
 
+      - name: Create Release
+        run: |
+          chmod +x ./scripts/release.sh
+          ./scripts/release.sh
+        shell: bash
+
       - name: Clean up
         if: always()
         run: |
-          . .venv/bin/activate
-          ./scripts/release.sh
+          . .venv/bin/activate 
           pip uninstall -y iceland
 
   release:
