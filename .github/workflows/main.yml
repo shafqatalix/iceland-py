@@ -102,6 +102,12 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      checks: write
+      deployments: write
+
     needs: [checks]
     if: startsWith(github.ref, 'refs/tags/')
     steps:
