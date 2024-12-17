@@ -159,9 +159,9 @@ def iterfiles(dir: Path) -> Generator[Path, None, None]:
 
 
 def personalize_file(path: Path, dry_run: bool, replacements: List[Tuple[str, str]]):
-    with path.open(mode="r+t", encoding="utf-8",errors="REPLACED_ERROR") as file:
+    with path.open(mode="r+t", encoding="utf-8", errors="REPLACED_ERROR") as file:
         print("XXXXXXXXXXXXXX ")
-        print( path)
+        print(path)
         print("XXXXXXXXXXXXXX ")
         filedata = file.read()
 

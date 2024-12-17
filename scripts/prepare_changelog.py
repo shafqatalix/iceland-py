@@ -1,7 +1,7 @@
 from datetime import datetime
 from pathlib import Path
-
-from iceland.version import VERSION
+ 
+import iceland
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
         line = lines[i]
         if line.startswith("## Unreleased"):
             insert_index = i + 1
-        elif line.startswith(f"## [v{VERSION}]"):
+        elif line.startswith(f"## [v{iceland.VERSION}]"):
             print("CHANGELOG already up-to-date")
             return
         elif line.startswith("## [v"):
@@ -27,7 +27,7 @@ def main():
     lines.insert(insert_index, "\n")
     lines.insert(
         insert_index + 1,
-        f"## [v{VERSION}](https://github.com/shafqatalix/iceland/releases/tag/v{VERSION}) - "
+        f"## [v{iceland.VERSION}](https://github.com/shafqatalix/iceland/releases/tag/v{iceland.VERSION}) - "
         f"{datetime.now().strftime('%Y-%m-%d')}\n",
     )
 
