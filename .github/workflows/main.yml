@@ -93,11 +93,11 @@ jobs:
           name: package
           path: dist
 
-      - name: Create Release
-        run: |
-          chmod +x ./scripts/release.sh
-          ./scripts/release.sh
-        shell: bash
+      # - name: Create Release
+      #   run: |
+      #     chmod +x ./scripts/release.sh
+      #     ./scripts/release.sh
+      #   shell: bash
 
       - name: Clean up
         if: always()
