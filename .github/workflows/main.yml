@@ -97,6 +97,7 @@ jobs:
         if: always()
         run: |
           . .venv/bin/activate
+          ./scripts/release.sh
           pip uninstall -y iceland
 
   release:
